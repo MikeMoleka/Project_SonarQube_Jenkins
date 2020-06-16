@@ -25,15 +25,11 @@ public class SimpleInterestCalculator implements InterestCalculator {
 	}
 	
 	public double moyenne(List<Double> tab) {
-		if (tab.size() > 0) {
-			double somme = 0;
-			for (int i = 0; i < tab.size(); i++) {
-				somme += tab.get(i);
-			}
-			return somme/tab.size();
-		} else {
-			return 0;
+		double somme = 0;
+		for (int i = 0; i < tab.size(); i++) {
+			somme += tab.get(i);
 		}
+		return somme/tab.size();
 		
 	}
 	
