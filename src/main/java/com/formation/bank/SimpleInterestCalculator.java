@@ -3,6 +3,8 @@
  */
 package com.formation.bank;
 
+import java.util.ArrayList;
+
 /**
  * @author mengbaka
  *
@@ -17,9 +19,34 @@ public class SimpleInterestCalculator implements InterestCalculator {
 
 	public double calculate(double amount, double year) {
 		if (amount < 0 || year < 0) {
-			throw new IllegalArgumentException("le montant et la durée doivent être positifs");
+			throw new IllegalArgumentException("le montant et la durï¿½e doivent ï¿½tre positifs");
 		}
 		return amount * year * rate;
+	}
+	
+	public double moyenne(ArrayList<Double> tab) {
+		if (tab.size() > 0) {
+			double somme = 0;
+			for (int i = 0; i < tab.size(); i++) {
+				somme += tab.get(i);
+			}
+			return somme/tab.size();
+		} else {
+			return 0;
+		}
+		
+	}
+	
+	public double sommeTab(ArrayList<Double> tab) {
+		if (tab.size() > 0) {
+			double somme = 0;
+			for (int i = 0; i < tab.size()-1; i++) {
+				somme += tab.get(i);
+			}
+			return somme;
+		} else {
+			return 0;
+		}
 	}
 
 }

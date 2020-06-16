@@ -1,6 +1,9 @@
 package com.formation.test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import java.util.ArrayList;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -26,5 +29,16 @@ public class SimpleInterestCalculatorJunit4Test {
 	@Test(expected = IllegalArgumentException.class)
 	public void testIllegalCalculate() {
 			interestCalculator.calculate(-10000, 2);
+	}
+	
+	@Test
+	public void testMoyenne( ) {
+		
+		ArrayList<Double>tab = new ArrayList<Double>();
+		tab.add(6.0);
+		tab.add(3.0);
+		tab.add(3.0);
+		double interest = interestCalculator.moyenne(tab);
+		assertEquals(interest, 4.0, 0.00);
 	}
 }
